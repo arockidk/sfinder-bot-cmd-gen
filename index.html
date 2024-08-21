@@ -6,11 +6,33 @@
         min-height: 100px;
       }
     </style>
+    <script>
+      function Copy(res) {
+        let el = document.createElement("button");
+        el.onclick = function (e) {
+          navigator.clipboard.writeText(res.innerText);
+        }
+        el.classList.add("copy")
+        el.innerText = "Copy"
+        return el;
+      }
+      window.onload = function () { 
+        let fumEl = document.querySelector("fumens");
+        let patEl = document.querySelector("patterns");
+        let output = document.querySelector("output");
+        let submit = document.querySelector("calc");
+        calc.onclick = function () {
+          alert(fumEl.innerText);
+        }
+      }
+    </script>
   </head>
   <body>
     <input id="fumens" placeholder="Enter fumens line seperated">
     
     <input id="patterns" placeholder="Enter patterns line seperated">
+    <button id="calc">Create Commands</button>
+      
     <ul id="output">
       
     </ul>
